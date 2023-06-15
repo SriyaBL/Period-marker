@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
         ${dayMap[day]}, ${currentDate.getDate()} - ${monthMap[month]} - ${currentDate.getFullYear()}
         `;
     
-        let periodDates = localStorage.getItem('periodDates');
+        let periodDates = JSON.parse(localStorage.getItem('periodDates'));
 
         if(!periodDates)
         {
