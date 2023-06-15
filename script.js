@@ -3,9 +3,6 @@ const dayMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'
 
 const monthMap = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-let periodDates = ['Thursday, 15 - June - 2023'];
-
-localStorage.setItem('periodDates', JSON.stringify(periodDates));
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -22,8 +19,18 @@ window.addEventListener('DOMContentLoaded', () => {
         ${dayMap[day]}, ${currentDate.getDate()} - ${monthMap[month]} - ${currentDate.getFullYear()}
         `;
     
-        periodDates.push(formattedDate);
-        localStorage['periodDates'] = JSON.stringify(periodDates);
+        let periodDates = localStorage.getItem('periodDates');
+
+        if(!periodDates)
+        {
+            periodDates = [formattedDate];
+        }
+        else
+        {
+            periodDates.push(formattedDate);
+        }
+        
+        localStorage.setItem('periodDates', JSON.stringify(periodDates));
         
         //save date to local storage
 
@@ -43,7 +50,7 @@ window.addEventListener('DOMContentLoaded', () => {
             deleteButton.textContent = 'Delete';
             deleteButton.addEventListener('click', (i) => {
                 periodDates.splice(i, 1);
-                localStorage['periodDates'] = JSON.stringify(periodDates);
+                localStorage.setItem('periodDates', JSON.stringify(periodDates));
                 renderPeriodItems();
             });
 
