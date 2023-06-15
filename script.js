@@ -7,14 +7,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const trackButton = document.getElementById('track-button');
     const periodList = document.getElementById('period-list');
-
+    const descriptionElement = document.getElementById('description-input');
 
 
     trackButton.addEventListener('click', function () {
         const currentDate = new Date();
         const day = currentDate.getDay();
         const month = currentDate.getMonth();
-        const formattedDate = `${dayMap[day]}, ${currentDate.getDate()} - ${monthMap[month]} - ${currentDate.getFullYear()}`;
+        const formattedDate = 
+        `
+        ${currentDate.getDay()}, ${currentDate.getDate()} - ${currentDate.getMonth() + 1} - ${currentDate.getFullYear()}
+        
+        ${descriptionElement.value}
+        `;
 
 
         let periodDates = JSON.parse(localStorage.getItem('periodDates'));
