@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const month = currentDate.getMonth();
         const formattedDate = 
         `
-        ${currentDate.getDay()}, ${currentDate.getDate()} - ${currentDate.getMonth() + 1} - ${currentDate.getFullYear()}
+        ${dayMap[day]}, ${currentDate.getDate()} - ${monthMap[month]} - ${currentDate.getFullYear()}
         
         ${descriptionElement.value}
         `;
