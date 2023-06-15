@@ -40,6 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
             deleteButton.textContent = 'Delete';
             deleteButton.addEventListener('click', (i) => {
                 periodDates.splice(i, 1);
+                localStorage['periodDates'] = JSON.stringify(periodDates);
                 renderPeriodItems();
             });
 
@@ -50,5 +51,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    renderPeriodItems();
 
 });
