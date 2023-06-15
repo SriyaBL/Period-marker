@@ -26,13 +26,12 @@ window.addEventListener('DOMContentLoaded', () => {
         
         if(!periodDates)
         {
-            periodDates.push(`Thursday, 15 June 2023`);
-            periodDates.push(formattedDate);
+            periodDates = `Thursday, 15 June 2023`;
+            //The day I got my periods, the day I made this app
         }
-        else
-        {
-            periodDates.push(formattedDate);
-        }
+        
+        periodDates.push(formattedDate);
+        
         //save date to local storage
         localStorage.setItem('periodDates', JSON.stringify(periodDates));
 
