@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const formattedDate = `${currentDate.getDay()}, ${currentDate.getDate()} - ${currentDate.getMonth() + 1} - ${currentDate.getFullYear()}`;
 
 
-        const periodDates = JSON.parse(localStorage.getItem('periodDates'));
+        let periodDates = JSON.parse(localStorage.getItem('periodDates'));
 
         if(!periodDates)
         {
