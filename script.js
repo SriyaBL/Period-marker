@@ -3,6 +3,10 @@ const dayMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'
 
 const monthMap = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
+let periodDates = ['Thursday, 15 - June - 2023'];
+
+localStorage.setItem('periodDates', JSON.stringify(periodDates));
+
 window.addEventListener('DOMContentLoaded', () => {
 
     const trackButton = document.getElementById('track-button');
@@ -20,16 +24,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let periodDates = JSON.parse(localStorage.getItem('periodDates'));
         
-        if(periodDates.length == 0)
-        {
-            periodDates = [`Thursday, 15 June 2023`];
-            //The day I got my periods, the day I made this app
-        }
-        
         periodDates.push(formattedDate);
         
         //save date to local storage
-        localStorage.setItem('periodDates', JSON.stringify(periodDates));
 
         renderPeriodItems();
     });
