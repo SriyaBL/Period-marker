@@ -15,16 +15,6 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* #description-input {
-    color: black;
-    background-color: #fff;
-    font-style: italic;
-    max-width: 400px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-} */
-
 #track-button {
     display:block;
     width:100%;

@@ -7,7 +7,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const trackButton = document.getElementById('track-button');
     const periodList = document.getElementById('period-list');
-    const descriptionElement = document.getElementById('description-input');
 
 
     trackButton.addEventListener('click', function () {
@@ -17,8 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
         const formattedDate = 
         `
         ${dayMap[day]}, ${currentDate.getDate()} - ${monthMap[month]} - ${currentDate.getFullYear()}
-        
-        ${descriptionElement.value}
         `;
 
 
