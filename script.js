@@ -10,9 +10,17 @@ window.addEventListener('DOMContentLoaded', () => {
         const currentDate = new Date();
         const formattedDate = `${currentDate.getDay()}, ${currentDate.getDate()} - ${currentDate.getMonth() + 1} - ${currentDate.getFullYear()}`;
 
-        const periodDates = JSON.parse(localStorage.getItem('periodDates'));
-        periodDates.push(formattedDate);
 
+        const periodDates = JSON.parse(localStorage.getItem('periodDates'));
+
+        if(!periodDates)
+        {
+            periodDates = [formattedDate];
+        }
+        else
+        {
+            periodDates.push(formattedDate);
+        }
         //save date to local storage
         localStorage.setItem('periodDates', JSON.stringify(periodDates));
 
