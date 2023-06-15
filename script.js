@@ -22,10 +22,8 @@ window.addEventListener('DOMContentLoaded', () => {
        
         periodDates.push(formattedDate);
         
-        
-        localStorage.setItem('periodDates', JSON.stringify(periodDates));
-        
         //save date to local storage
+        localStorage.setItem('periodDates', JSON.stringify(periodDates));
 
         renderPeriodItems();
     });
@@ -35,7 +33,6 @@ window.addEventListener('DOMContentLoaded', () => {
         periodList.innerHTML = '';
         const periodDates = JSON.parse(localStorage.getItem('periodDates'))
 
-        //console.log(periodDates);
         for (let i = 0; i < periodDates.length; i++) {
 
             const listItem = document.createElement('li');
