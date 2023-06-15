@@ -3,7 +3,7 @@ const dayMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'
 
 const monthMap = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-localStorage.setItem('periodDates', "Thursday, 15 - June - 2023");
+localStorage.setItem('periodDates', JSON.stringify(["Thursday, 15 - June - 2023"]));
 
 
 window.addEventListener('DOMContentLoaded', () => {
