@@ -18,10 +18,9 @@ window.addEventListener('DOMContentLoaded', () => {
         ${dayMap[day]}, ${currentDate.getDate()} - ${monthMap[month]} - ${currentDate.getFullYear()}
         `;
 
-
         let periodDates = JSON.parse(localStorage.getItem('periodDates'));
         
-        if(!periodDates)
+        if(periodDates.length == 0)
         {
             periodDates = [`Thursday, 15 June 2023`];
             //The day I got my periods, the day I made this app
