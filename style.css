@@ -15,7 +15,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#description-input {
+/* #description-input {
     color: black;
     background-color: #fff;
     font-style: italic;
@@ -23,7 +23,7 @@ body {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-}
+} */
 
 #track-button {
     display:block;

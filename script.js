@@ -23,10 +23,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
         let periodDates = JSON.parse(localStorage.getItem('periodDates'));
-
+        
         if(!periodDates)
         {
-            periodDates = [formattedDate];
+            periodDates.push(`Thursday, 15 June 2023`);
+            periodDates.push(formattedDate);
         }
         else
         {
