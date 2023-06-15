@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
         
         if(!periodDates)
         {
-            periodDates = `Thursday, 15 June 2023`;
+            periodDates = [`Thursday, 15 June 2023`];
             //The day I got my periods, the day I made this app
         }
         
