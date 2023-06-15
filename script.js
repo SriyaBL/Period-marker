@@ -21,10 +21,9 @@ window.addEventListener('DOMContentLoaded', () => {
         `
         ${dayMap[day]}, ${currentDate.getDate()} - ${monthMap[month]} - ${currentDate.getFullYear()}
         `;
-
-        let periodDates = JSON.parse(localStorage.getItem('periodDates'));
-        
+    
         periodDates.push(formattedDate);
+        localStorage['periodDates'] = JSON.stringify(periodDates);
         
         //save date to local storage
 
