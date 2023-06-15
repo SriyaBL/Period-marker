@@ -3,9 +3,6 @@ const dayMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'
 
 const monthMap = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-localStorage.setItem('periodDates', JSON.stringify(["Thursday, 15 - June - 2023"]));
-
-
 window.addEventListener('DOMContentLoaded', () => {
 
     const trackButton = document.getElementById('track-button');
@@ -18,19 +15,13 @@ window.addEventListener('DOMContentLoaded', () => {
         const month = currentDate.getMonth();
         const formattedDate = 
         `
-        ${dayMap[day]}, ${currentDate.getDate()} - ${monthMap[month]} - ${currentDate.getFullYear()}
+        ${dayMap[day]}, ${currentDate.getDate()} - ${monthMap[month]} - ${currentDate.getFullYear()};
         `;
     
         let periodDates = JSON.parse(localStorage.getItem('periodDates'));
-
-        if(!periodDates)
-        {
-            periodDates = [formattedDate];
-        }
-        else
-        {
-            periodDates.push(formattedDate);
-        }
+       
+        periodDates.push(formattedDate);
+        
         
         localStorage.setItem('periodDates', JSON.stringify(periodDates));
         
@@ -44,17 +35,21 @@ window.addEventListener('DOMContentLoaded', () => {
         periodList.innerHTML = '';
         const periodDates = JSON.parse(localStorage.getItem('periodDates'))
 
+        //console.log(periodDates);
         for (let i = 0; i < periodDates.length; i++) {
+
             const listItem = document.createElement('li');
             listItem.textContent = periodDates[i];
 
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Delete';
-            deleteButton.addEventListener('click', (i) => {
-                periodDates.splice(i, 1);
-                localStorage.setItem('periodDates', JSON.stringify(periodDates));
-                renderPeriodItems();
-            });
+            (function(index) {
+                deleteButton.addEventListener('click', function() {
+                  periodDates.splice(index, 1);
+                  localStorage.setItem('periodDates', JSON.stringify(periodDates));
+                  renderPeriodItems();
+                });
+              })(i);
 
             listItem.appendChild(deleteButton);
             periodList.appendChild(listItem);
@@ -64,5 +59,5 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     renderPeriodItems();
-
 });
+
