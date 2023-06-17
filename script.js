@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const month = currentDate.getMonth();
         const formattedDate = 
         `
-        ${dayMap[day]}, ${currentDate.getDate()} - ${monthMap[month]} - ${currentDate.getFullYear()};
+        ${dayMap[day]}, ${currentDate.getDate()} - ${monthMap[month]} - ${currentDate.getFullYear()}
         `;
     
         let periodDates = JSON.parse(localStorage.getItem('periodDates'));
